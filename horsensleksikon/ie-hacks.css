@@ -1,0 +1,23 @@
+/* Hacks for IE6 */
+div#tools .jquery-corner {display:none!important;}
+div#kill-ie6 {background:#ffc;padding:6px 30px 10px;border-bottom:1px solid #cc9;}
+div#kill-ie6 h3, div#kill-ie6 p {width:960px;margin:0 auto;text-align:left;}
+div#kill-ie6 h3 {font-size:12px!important;line-height:16px;}
+div#kill-ie6 p {font-size:11px!important;line-height:16px;}
+#headerwrap, #navigationwrap, #contentwrap, #footerwrap {background:none!important;}
+
+/* **************************************************
+Png fix - http://komodomedia.com/blog/index.php/2007/11/05/css-png-image-fix-for-ie/
+***************************************************** */
+* html #sitename a, * html .introtekst, * html .introtekst .artikel-rokade, * html .png {
+behavior: expression((this.runtimeStyle.behavior="none")&&(this.pngSet?this.pngSet=true:(this.nodeName == "IMG" && this.src.toLowerCase().indexOf('.png')>-1?(this.runtimeStyle.backgroundImage = "none",
+this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.src + "', sizingMethod='image')",
+this.src = "../graphics/x.gif"):(this.origBg = this.origBg? this.origBg :this.currentStyle.backgroundImage.toString().replace('url("','').replace('")',''),
+this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.origBg + "', sizingMethod='crop')",
+this.runtimeStyle.backgroundImage = "none")),this.pngSet=true)
+);
+}
+
+
+
+
